@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
+>
+<head>
+    <title data-th-text="${loggedInUser.name}+' |  Dashboard'">
+        Profile Page
+    </title>
+</head>
+<body>
+<div id="content">
+    <!-- sidebar -->
+
+    <!-- user is logged in : sidebar -->
+
+    <div th:if="${loggedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+    </div>
+
+    <div class="sm:pl-64 pt-20" style="height: 1000px">
+        <div class="flex justify-center flex-col items-center">
+            <h1 class="text-5xl">Welcome to Dashbaord page</h1>
+            <br>
+            <br>
+            <p>
+                CG4all (Complete Guide 4All) provides a dynamic and supportive environment to enhance your skills and
+                career prospects. With expert faculty and industry-aligned training, we equip you with a competitive
+                edge in the job market. Through collaborations with highly qualified professionals, CG4all ensures
+                personalized guidance to help you successfully enter and thrive in your desired sector.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    console.log("this is profile page");
+</script>
+</body>
+</html>
